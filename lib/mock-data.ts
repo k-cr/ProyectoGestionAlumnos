@@ -1,0 +1,1 @@
+import type { Alumno, Materia, Nivel, Clase, Evaluacion } from "./types"
