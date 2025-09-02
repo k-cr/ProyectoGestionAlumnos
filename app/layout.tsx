@@ -7,6 +7,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "EduManager - Gestión de Alumnos",
   description: "Sistema de gestión para profesores particulares",
+  generator: "v0.app",
 }
 
 export default function RootLayout({

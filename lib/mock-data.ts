@@ -1,1 +1,144 @@
-import type { Alumno, Materia, Nivel, Clase, Evaluacion } from "./types"
+import type { Student, Class, Evaluation, Progress, Configuration } from "./types"
+
+export const mockStudents: Student[] = [
+  {
+    id: "1",
+    name: "Ana García",
+    email: "ana.garcia@email.com",
+    phone: "+34 666 123 456",
+    subject: "Matemáticas",
+    level: "Bachillerato",
+    startDate: "2024-01-15",
+    status: "active",
+    notes: "Estudiante muy aplicada, necesita refuerzo en álgebra",
+  },
+  {
+    id: "2",
+    name: "Carlos Rodríguez",
+    email: "carlos.rodriguez@email.com",
+    phone: "+34 666 789 012",
+    subject: "Física",
+    level: "Universidad",
+    startDate: "2024-02-01",
+    status: "active",
+    notes: "Excelente comprensión teórica, mejorar resolución de problemas",
+  },
+  {
+    id: "3",
+    name: "María López",
+    email: "maria.lopez@email.com",
+    phone: "+34 666 345 678",
+    subject: "Inglés",
+    level: "Intermedio",
+    startDate: "2024-01-20",
+    status: "paused",
+    notes: "Pausado temporalmente por viaje",
+  },
+]
+
+export const mockClasses: Class[] = [
+  {
+    id: "1",
+    studentId: "1",
+    studentName: "Ana García",
+    subject: "Matemáticas",
+    date: "2024-12-18",
+    time: "16:00",
+    duration: 60,
+    status: "scheduled",
+    notes: "Repasar ecuaciones cuadráticas",
+    homework: "Ejercicios 1-10 del capítulo 5",
+  },
+  {
+    id: "2",
+    studentId: "2",
+    studentName: "Carlos Rodríguez",
+    subject: "Física",
+    date: "2024-12-18",
+    time: "18:00",
+    duration: 90,
+    status: "scheduled",
+    notes: "Mecánica cuántica - principios básicos",
+  },
+  {
+    id: "3",
+    studentId: "1",
+    studentName: "Ana García",
+    subject: "Matemáticas",
+    date: "2024-12-16",
+    time: "16:00",
+    duration: 60,
+    status: "completed",
+    notes: "Excelente progreso en derivadas",
+    homework: "Completado correctamente",
+  },
+]
+
+export const mockEvaluations: Evaluation[] = [
+  {
+    id: "1",
+    studentId: "1",
+    studentName: "Ana García",
+    subject: "Matemáticas",
+    type: "exam",
+    title: "Examen de Álgebra",
+    date: "2024-12-10",
+    score: 8.5,
+    maxScore: 10,
+    notes: "Muy buen resultado, pequeños errores en factorización",
+  },
+  {
+    id: "2",
+    studentId: "2",
+    studentName: "Carlos Rodríguez",
+    subject: "Física",
+    type: "homework",
+    title: "Problemas de Cinemática",
+    date: "2024-12-12",
+    score: 9,
+    maxScore: 10,
+    notes: "Excelente comprensión de conceptos",
+  },
+  {
+    id: "3",
+    studentId: "1",
+    studentName: "Ana García",
+    subject: "Matemáticas",
+    type: "quiz",
+    title: "Quiz Derivadas",
+    date: "2024-12-14",
+    score: 7,
+    maxScore: 10,
+    notes: "Necesita practicar más la regla de la cadena",
+  },
+]
+
+export const mockProgress: Progress[] = [
+  {
+    studentId: "1",
+    subject: "Matemáticas",
+    currentLevel: "Bachillerato",
+    completedTopics: ["Álgebra básica", "Geometría", "Trigonometría"],
+    strengths: ["Resolución de problemas", "Comprensión conceptual"],
+    areasToImprove: ["Factorización", "Regla de la cadena"],
+    overallProgress: 75,
+    lastUpdated: "2024-12-16",
+  },
+  {
+    studentId: "2",
+    subject: "Física",
+    currentLevel: "Universidad",
+    completedTopics: ["Mecánica clásica", "Termodinámica"],
+    strengths: ["Teoría", "Análisis conceptual"],
+    areasToImprove: ["Resolución numérica", "Aplicaciones prácticas"],
+    overallProgress: 85,
+    lastUpdated: "2024-12-15",
+  },
+]
+
+export const mockConfiguration: Configuration = {
+  id: "1",
+  levels: ["Primaria", "Secundaria", "Bachillerato", "Universidad", "Básico", "Intermedio", "Avanzado"],
+  subjects: ["Matemáticas", "Física", "Química", "Inglés", "Español", "Historia", "Biología", "Programación"],
+  lastUpdated: "2024-12-17",
+}

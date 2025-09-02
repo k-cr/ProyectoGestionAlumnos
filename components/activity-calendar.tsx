@@ -5,10 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Calendar } from "lucide-react"
 import { DataService } from "@/lib/data-service"
-import type { Clase } from "@/lib/types"
+import type { Class } from "@/lib/types"
 
 export function ActivityCalendar() {
-  const [classes, setClasses] = useState<Clase[]>([])
+  const [classes, setClasses] = useState<Class[]>([])
   const [currentDate, setCurrentDate] = useState(new Date())
   const [loading, setLoading] = useState(true)
 
@@ -52,7 +52,7 @@ export function ActivityCalendar() {
   const getClassesForDate = (date: Date) => {
     if (!date) return []
     const dateStr = date.toISOString().split("T")[0]
-    return classes.filter((cls) => cls.fechaClase.startsWith(dateStr))
+    return classes.filter((cls) => cls.date.startsWith(dateStr))
   }
 
   const navigateMonth = (direction: "prev" | "next") => {
@@ -161,9 +161,9 @@ export function ActivityCalendar() {
                     <div
                       key={i}
                       className={`text-xs px-1 py-0.5 rounded text-white truncate ${
-                        cls.estado === 1
+                        cls.status === "completed"
                           ? "bg-green-500"
-                          : cls.estado === 2
+                          : cls.status === "cancelled"
                             ? "bg-red-500"
                             : "bg-primary"
                       }`}
